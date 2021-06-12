@@ -25,7 +25,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <body>
     <div style="overflow-x: auto">
-    <a href="{{url('pasien_import0002')}}">  Import Data Pasien</a>
+    <a href="{{url('pasienimport0002')}}">  Import Data Pasien</a>
     <table>
         <thead>
             <tr>

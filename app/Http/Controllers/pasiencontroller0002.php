@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\kamar;
 use DB;
+use App\Imports\PasienImport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class pasiencontroller0002 extends Controller
@@ -20,5 +22,17 @@ class pasiencontroller0002 extends Controller
         ->join('dokter', 'dokter.id', '=', 'kamar.id_dokter')
         ->get();
         return view('dokter0002', ['pasien'=>$pasien]);
+    }
+
+
+    public function import(Request $request)
+    {
+        Excel::import(new PasienImport, $request->file);
+        return redirect('dokter0002');
+    }
+
+    public function formimport()
+    {
+        return view('pasienimport0002');
     }
 }

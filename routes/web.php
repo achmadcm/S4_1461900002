@@ -19,4 +19,6 @@ Route::get('/', function () {
 
 });
 Route::resource('dokter0002',pasiencontroller0002::class);
-Route::post('/pasien/import_excel', 'pasiencontroller@import_excel')
+
+Route::get('pasienimport0002', [pasiencontroller0002::class, 'formimport']);
+Route::post("pasienimport0002", [pasiencontroller0002::class, 'import'])->name("pasien.import");
